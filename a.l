@@ -1,0 +1,13 @@
+%{
+#include <stdio.h>
+%{
+%%
+"if"    { printf("Palabra clave IF encontrada\n"); }
+"else"    { printf("Palabra clave ELSE encontrada\n"); }
+"while"    { printf("Palabra clave WHILE encontrada\n"); }
+.    { /* Ignorar otros caracteres */
+%%
+int main() {
+    yylex();
+    return 0;
+}
